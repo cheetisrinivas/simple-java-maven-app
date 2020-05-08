@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'java-docker-slave' }
-    }
+    
     stages {
        stage('checkout') {
          steps {
@@ -14,6 +14,7 @@ checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-    }
+   }
+   
 }
 
